@@ -1,0 +1,55 @@
+<!-- Nguyen Ngoc Ha
+email: hnn152151927@gmail.com -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./js/styles.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+        Calculator Standard
+        <img
+          src="https://image.flaticon.com/icons/svg/257/257791.svg"
+          alt=""
+          width="25"
+          height="25"
+        />
+      </h1>
+    </div>
+
+    <div class="calcuLator">
+      <div class="itemResult" id="result">0</div>
+      <div class="item" onclick="pressPercent()">%</div>
+      <div class="item">CE</div>
+      <div class="item" onclick="pressNumber(7)">7</div>
+      <div class="item" onclick="pressNumber(4)">4</div>
+      <div class="item" onclick="pressNumber(1)">1</div>
+      <div class="item" onclick="pressSwapPlusMinus()">+/-</div>
+      <div class="item" onclick="pressSqrt()">sqrt</div>
+      <div class="item" onclick="pressClear()">C</div>
+      <div class="item" onclick="pressNumber(8)">8</div>
+      <div class="item" onclick="pressNumber(5)">5</div>
+      <div class="item" onclick="pressNumber(2)">2</div>
+      <div class="item" onclick="pressNumber(0)">0</div>
+      <div class="item" onclick="pressSquared()">x^2</div>
+      <div class="item" onclick="pressDelete()">DEL</div>
+      <div class="item" onclick="pressNumber(9)">9</div>
+      <div class="item" onclick="pressNumber(6)">6</div>
+      <div class="item" onclick="pressNumber(3)">3</div>
+      <div class="item" onclick="pressDot()">.</div>
+      <div class="item" onclick="pressInverse()">1/x</div>
+      <div class="item" onclick="pressOperator(' / ')">/</div>
+      <div class="item" onclick="pressOperator(' * ')">x</div>
+      <div class="item" onclick="pressOperator(' - ')">-</div>
+      <div class="item" onclick="pressOperator(' + ')">+</div>
+      <div class="item" id="pressEqual" onclick="pressEqual()">=</div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
