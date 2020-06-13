@@ -9,66 +9,6 @@ function pressPercent() {
 
 }
 
-// var stringA = "abcdabcaadeas", stringB = "a"
-// x = stringA.split(stringB);
-// alert(x + " - typeof x[0]: " + typeof x[0])
-
-// var stringA = "abcdabcaadeas", stringB = "a"
-// x = stringA.split(stringB).length - 1;
-// alert(x)
-
-function numberOfString(string, child) {
-    return string.split(child).length - 1;
-}
-
-function findString(string) {
-    let _length2 = parseInt(string.length / 2);
-    let arrayFilterSL = new Array();
-
-    for (let i = 1; i <= _length2; i++) {
-        for (let j = 0; j <= _length2; j++) {
-            childString = string.substr(j, i);
-            lengthChild = numberOfString(string, childString);
-            // alert(lengthChild);break;
-            arrayFilterSL.push({ //đưa chuỗi đã tách + độ dài tương ứng vào mảng (gồm chuỗi + độ dài)
-                _string: childString,
-                _length: lengthChild
-            })
-        }
-    }
-    alert(arrayFilterSL);break;
-
-    //tìm độ dài lớn nhất
-    let maxLength = arrayFilterSL[0]._length;
-    for (let k = 1; k < arrayFilterSL.length; k++) {
-        if (maxLength < arrayFilterSL[k]._length) {
-            maxLength = arrayFilterSL[k]._length;
-        }
-    }
-
-    //lọc mảng tìm các chuỗi có độ dài = maxLength, cho vào mảng mới (chỉ gồm các chuỗi)
-    let newString = new Array();
-    for (let m = 0; m < arrayFilterSL.length; m++) {
-        if (maxLength == arrayFilterSL[m]._length) {
-            newString.push(arrayFilterSL[m]._string);
-        }
-    }
-
-    //so sánh xem chuỗi nào dài nhất
-    let finalStringLength = newString[0].length;
-    let finalString = newString[0];
-    for (let n = 1; n < newString.length; n++) {
-        if (finalStringLength < newString[i].length) {
-            finalStringLength = newString[i].length;
-            finalString = newString[i];
-        }
-    }
-
-
-    return finalString;
-}
-alert(findString("abcdabcd"));
-
 function pressSqrt() {
     displayResult.innerHTML = Math.sqrt(result);
     updateResult();
