@@ -64,6 +64,8 @@ function pressOperator(operator) {
 function pressNumber(number) {
     if (result == 0 && number != 0) {
         displayResult.innerHTML = number;
+        if (result === "0.")
+            displayResult.innerHTML = "0." + number;
     }
     else if (result != 0) {
         displayResult.innerHTML += number;
@@ -80,14 +82,21 @@ function isFloat(n) {
 }
 
 function pressDot() {
-    if (!isFloat(result)) {
-        let character = result.substr(result.length - 1, 1);
-        //if last character is number, integer
-        if (Number(character) || character == 0) {
+    _length = result.length;
+    let space = result.lastIndexOf(" ");
+    //fistNumber isFloat?
+    if (space == -1) { 
+        if (result.indexOf(".") == -1)
             displayResult.innerHTML += ".";
-        }
-        updateResult();
     }
+    else {
+        //check lastNumber isFloat?
+        let lastNumber = result.slice(space, _length);
+        if (lastNumber.indexOf(".") == -1)
+            displayResult.innerHTML += ".";
+    }
+    updateResult();
+
 }
 
 function pressEqual() {
@@ -116,5 +125,4 @@ function pressEqual() {
 
     updateResult();
 
-    // alert(result + "\n" + arrayCharacter + " - length: " + arrayCharacter.length);
 }
