@@ -34,7 +34,7 @@ function pressDelete() {
     if (result != 0) {
         //last character = number: delete 1 character
         var character = result.substr(result.length - 1, 1);
-        if (Number(character) || parseInt(character) == 0) {
+        if (Number(character) || parseInt(character) == 0 || character == ".") {
             displayResult.innerHTML = result.substr(0, result.length - 1);
         }
         //last character = operator: delete 3 character
