@@ -33,7 +33,7 @@ function pressClear() {
 function pressDelete() {
     if (result != 0) {
         //last character = number: delete 1 character
-        let character = result.substr(result.length - 1, 1);
+        var character = result.substr(result.length - 1, 1);
         if (Number(character) || parseInt(character) == 0) {
             displayResult.innerHTML = result.substr(0, result.length - 1);
         }
@@ -47,7 +47,7 @@ function pressDelete() {
 
 function pressOperator(operator) {
     if (result != 0) {
-        let character = result.substr(result.length - 1, 1);
+        var character = result.substr(result.length - 1, 1);
         //last character = number: add operator
         if (Number(character) || parseInt(character) == 0) {
             displayResult.innerHTML += operator;
@@ -82,8 +82,8 @@ function isFloat(n) {
 }
 
 function pressDot() {
-    _length = result.length;
-    let space = result.lastIndexOf(" ");
+    var _length = result.length;
+    var space = result.lastIndexOf(" ");
     //fistNumber isFloat?
     if (space == -1) { 
         if (result.indexOf(".") == -1)
@@ -100,9 +100,9 @@ function pressDot() {
 }
 
 function pressEqual() {
-    let arrayCharacter = new Array();
+    var arrayCharacter = new Array();
     arrayCharacter = result.split(" ");
-    let _length = arrayCharacter.length;
+    var _length = arrayCharacter.length;
 
     for (let i = 1; i < _length; i += 2) {
         switch (arrayCharacter[i]) {
